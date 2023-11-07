@@ -21,7 +21,7 @@ jobs:
           bump-patch-for-minor-pre-major: true
           include-v-in-tag: false
       # The logic below handles the PyPi distribution:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         # these if statements ensure that a publication only occurs when
         # a new release is created:
         if: ${{ steps.release.outputs.release_created }}
@@ -31,7 +31,7 @@ jobs:
           python-version: "3.11"
         if: ${{ steps.release.outputs.release_created }}
       - name: Set up poetry
-        uses: abatilo/actions-poetry@v2.2.0
+        uses: abatilo/actions-poetry@v2.3
         with:
           poetry-version: 1.6.1
         if: ${{ steps.release.outputs.release_created }}
