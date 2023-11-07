@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "blocker"
+version = "0.1.0"
+packages = [
+    { include = "blocker", from = "src" },
+]
+include = [
+    "src/blocker/data/*.yml",
+]
+description = "blocker is a Python package that checks indicators against block lists"
+authors = ["Josh Rickard <jrickard@live.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/MSAdministrator/blocker"
+repository = "https://github.com/MSAdministrator/blocker"
+
+[tool.poetry.scripts]
+blocker = "blocker.__main__:main"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pyyaml = "^6.0.1"
+fire = "^0.5.0"
+requests = "^2.31.0"
+nox = "^2023.4.22"
+nox-poetry = "^1.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
